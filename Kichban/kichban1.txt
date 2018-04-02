@@ -1,1 +1,9 @@
-Kich ban goes here
+Mục đích: tạo được một agent đơn giản 
+
+1. tạo một maven project có tên là hello-jade
+2. thêm các gói thư viện của JADE bằng file pom.xml
+    - Trong file pom, đầu tiên ta thêm repository của JADE. Ta sẽ thêm vào <repositories> ... </repositories>
+    - Sau đó, ta thêm dependency. Tương tự như trên, ta sẽ thêm vào <dependencies> ... </dependencies>
+    - Lưu ý, vì maven build tự động nên ta phải thêm repository trước rồi sau đó mới thêm dependency.
+3. tạo một class HelloAgent ở packages src.main.java.testagent
+4. 
