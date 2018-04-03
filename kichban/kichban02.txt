@@ -1,0 +1,17 @@
+Mục đích: agent identifier
+	- Sử dụng lại project hello-jade
+
+1. tạo một class mới AgentId ở package testagent
+	- AID là đối tượng để quản lý anget id.
+	- dùng getAID() để lấy reference đến id của agent
+	- dùng một số method để lấy agent local name, guid, address
+	- guid = localname@flatform
+	- ví dụ localname = agent1, flatform = 192.168.160.1:1099/JADE --> guid = agent1@192.168.160.1:1099/JADE
+	
+2. chạy chương trình
+	- Lưu ý, parameters lúc này là: agent1:testagent.AgentId
+	- không cần -gui vì chỉ cần test AID của agent, không cần hiển thị giao diện
+	- agent1 là tên của agent. Khi chayj, kết quả agent name sẽ là agent1
+	- testagent.AgentId là lớp dùng để tạo agent.
+	
+	
