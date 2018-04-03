@@ -1,0 +1,28 @@
+Mục đích: tạo được một agent đơn giản 
+
+1. tạo một maven project có tên là hello-jade.
+2. thêm các gói thư viện của JADE bằng file pom.xml.
+    - Trong file pom, đầu tiên ta thêm repository của JADE. Ta sẽ thêm vào <repositories> ... </repositories>
+    - Sau đó, ta thêm dependency. Tương tự như trên, ta sẽ thêm vào <dependencies> ... </dependencies>
+    - Lưu ý, vì maven build tự động nên ta phải thêm repository trước rồi sau đó mới thêm dependency.
+3. tạo một class HelloAgent ở packages src.main.java.testagent.
+	- class này sẽ extends từ class Agent ở package jade.core.Agent (một API từ JADE).
+	- class Agent sẽ chứa các phương thức liên quan đến các hoạt động - behavior của agent như setup(), recieve(), send(), takedown(), ...
+	- trong class HelloAgent, ta sẽ override lại setup() là method được gọi ngay sau khi agent được khởi tạo.
+4. chạy chương trình bằng Run configurations trong eclipse.
+	- configuration cũng tương tự như command line, sẽ có chổ để điền các tham số.
+	https://drive.google.com/open?id=1roLd8A13qQYW11kK1YFzhBxSWtV5HKqS
+	https://drive.google.com/open?id=1uhZenIXgdE3xa3dEH3pBj21opQWQxfpR
+	- Ở menu, chọn Run --> Run configurations.
+	- Ở mục bên trái, tìm đến java application --> chuột phải, chọn New để tạo ra một configuration mới.
+	- Name: tên của configuration.
+	- Project: tên của project.
+	- Main class: jade.Boot.
+	- Program aguments: -gui agent1:testagent.HelloAgent.
+5. eclipse có hiển thị câu command line mà eclipse dùng để chạy chương trình nên không lo lắng việc chạy bằng command line hay chạy bằng eclipse.
+	- trong view Debug --> chuột phải vào lần cuối cùng chạy chương trình --> chọn Properties.
+	https://drive.google.com/open?id=170gJMwP-HOHMvv75mR_Mo6Cn6Tn9L5u7
+	- trong cửa sổ sẽ hiển thị câu command line eclipse dùng để chạy chương trình.
+	https://drive.google.com/open?id=1sd6zEZw2sEHRU8Vuksq-ENrmeaVy-4P0
+	- copy câu command line và chạy bằng cmd sẽ cho kết quả tương tự.
+	https://drive.google.com/open?id=10qNWi1pi8BuwWTpgUYv40otop80QLRqh
