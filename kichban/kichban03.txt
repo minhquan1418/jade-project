@@ -1,0 +1,10 @@
+Mục đích: truyền tham số vào cho agent
+	- có thể truyền tham bằng command line
+	
+1. tạo 1 package mới: kichban03, tạo một lớp agent mới ArgumentAgent
+	- dùng getArguments() để lấy tất cả các tham số được truyền vào
+	- duyệt danh sách tham số đó và in ra màn hình console
+	
+2. chạy chương trình
+	- tham số lúc truyền vào sẽ là: agent1:kichban03.ArgumentAgent(arg1,arg2,arg3)
+	- danh sách tham số được truyền vào trong dấu (), cách nhau bởi dấu ,
