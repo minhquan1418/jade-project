@@ -1,0 +1,20 @@
+Mục đích: thêm một behavior đơn giản cho agent
+	- agent có thể có nhiều tác vụ cần thực hiện
+	- không thể dồn hết vào 1 hàm setup() được --> tách ra thành class riêng
+	- các behavior extends từ lớp jade.core.behaviours.Behaviour
+	- tạo package kichban04 để sử dụng cho kịch bản này
+	
+1. tạo một lớp behavior: CounterBehavior
+	- extends từ lớp jade.core.behaviours.Behaviour
+	- có 2 phương thức cần chú ý là action() và done()
+	- 2 method này được thừa kế từ lớp cha và ta phải override chúng cho phù hợp với mục đích
+	- action() sẽ được thực hiện cho đến khi done() trả về giá trị true
+	- ở đây action sẽ tăng biến counter lên 1 và khi counter = 3 done() sẽ trả về giá trị true
+
+2. thêm behavior cho agent
+	- agent thêm behavior bằng method addBehavior
+	- tạo 1 class agent: CounterAgent
+	- trong method setup()
+	
+3. chạy chương trình để xem kết quả
+	- parameter: agent1:kichban04.CounterAgent
