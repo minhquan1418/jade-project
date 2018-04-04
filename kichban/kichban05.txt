@@ -1,0 +1,22 @@
+Mục đích: scheduling operations
+    - là những behavior được lặp lại trong 1 khoảng thời gian nhất định
+    - có 2 scheduling behavior được xây dựng sẵn là WakerBehavior và TickerBehavior
+    - tạo package kichban05 để sử dụng
+
+1. tạo lớp MyWakerBehavior extends từ WakerBehavior
+    - WakerBehavior là hành động sẽ thực hiện 1 lần sau 1 khoản thời gian
+    - WakerBehavior cũng có 2 method action() và done()
+    - action() được mặc địch sẽ gọi onWake() --> chỉ cần override onWake
+    - done() luôn trả về true để hành động chỉ được thực hiện 1 lần
+
+2. tạo agent WakerAgent để thêm MyWakerBehavior
+    - tương tự như cách thêm behavior ở các kịch bản trước
+    - chạy chương trình để xem kết quả
+
+3. tạo lớp MyTickerBehavior extends từ TickerBehavior
+    - TickerBehavior là hành động luôn được lặp lại sau một khoản thời gian
+    - tương tự như WakerBehavior, action() của TickerBehavior gọi onTick()
+    - done() luôn trả về giá trị false để hành động lặp vô tận
+
+4. tạo agent TickerAgent để thêm MyTickerBehavior
+    - tương tự xem kết quả behavior thực hiện lặp lại sau 1 khoản thời gian
