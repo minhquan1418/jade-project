@@ -14,6 +14,9 @@ public class ReceiverBehavior extends CyclicBehaviour {
 		if(msg != null) {
 			System.out.println("receiver: message received!");
 			System.out.println("message content " + msg.getContent());
+		} else {
+			// block action --> tiet kiem CPU
+			block();
 		}
 	}
 
