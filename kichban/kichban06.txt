@@ -1,0 +1,12 @@
+Mục đích: tạo được nhiều agent đơn giản, cùng ở Main Container
+    - tạo package kichban06
+
+1. tạo FirstAgent
+    - xuất câu chào "hello from first agent"
+
+2. tạo SecondAgent
+    - xuất câu chào "hello from second agent"
+
+3. chạy chương trình 
+    - parameter: -gui agent1:kichban06.FirstAgent;agent2:kichban06.SecondAgent
+    - thứ tự tạo các agent là không xác định được
