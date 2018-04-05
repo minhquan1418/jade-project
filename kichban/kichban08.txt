@@ -1,0 +1,33 @@
+Mục đích: gửi, nhận và reply
+    - khi gửi một message, cần biết được AID của người nhận
+    - giả sử agent gửi biết trước tên của agent nhận
+    - agent nhận không biết tên của agent gửi
+    - nhưng từ message nhận được, agent nhận có thể biết được tên agent gửi
+    - từ đó, agent nhận có thể reply được lại cho agent gửi
+    - tạo package kichban08
+
+1. tạo agent FirstAgent 
+    - agent này có nhiệm vụ gửi và lắng nghe reply
+    - nhiệm vụ này sẽ được implement trong FirstBehavior
+    - FirstAgent chỉ cần thêm FirstBehavior
+
+2. tạo FirstBehavior
+    - FirstBehavior đảm nhận đến 2 nhiệm vụ --> ta có thể dùng 1 biến đếm để kiểm soát nhiệm vụ
+    - nếu biến đếm = 0 --> thực hiện gửi
+    - nếu biến đếm = 1 --> lắng reply
+    - nếu biến đếm = 2 --> done()
+
+3. tạo agent SecondAgent
+    - agent này có nhiệm vụ lắng nghe message và reply
+    - nhiệm vụ này sẽ được implement trong SecondBehavior
+    - SecondAgent chỉ cần thêm SecondBehavior
+
+4. tạo SecondBehavior
+    - tương tự như FirstBehavior, ta dùng biến đếm
+    - nếu biến đếm = 0 --> lắng nghe message đến
+    - nếu biến đếm = 1 --> reply
+    - nếu biến đếm = 2 --> done()
+    - ACLMessage có cung cấp một số method để có thể lấy được các thông tin của người gửi 
+    - dùng ACLMessage.getSender() hoặc ACLMessage.createReply()
+
+5. chạy chương trình
