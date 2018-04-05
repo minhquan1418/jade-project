@@ -1,0 +1,28 @@
+Mục đích: tạo 1 agent gửi message, 1 agent nhận message
+    - 2 agent ở cùng Main Container
+    - ACLMessage là đối tượng chứa thông tin của message
+    - tạo package kichban07
+
+1. tạo agent SenderAgent
+    - tạo class SenderAgent
+    - tạo một Behavior có tên SenderBehavior để thực hiện gửi
+    - thêm SenderBehavior cho SenderAgent
+
+2. implement SenderBehavior
+    - vì chỉ gửi message 1 lần nên SenderBehavior là one-shot behavior --> extends OneShotBehavior
+    - trong action() sẽ implement nhiệm vụ gửi
+    - ACLMessage sẽ chứa các thông tin về message như người nhận, nội dung, mục đích của message, ...
+    - chỉ cần dùng đối tượng ACLMessage để điền vào các thông tin cần thiết
+    - agent sẽ gọi send() để gửi message
+
+3. tạo agent ReceiverAgent
+    - tương tự với behavior nhận message ReceiverBehavior
+
+4. implement ReceiverBehavior
+    - vì phải luôn lắng nghe message nên ReceiverBehavior là cyclic behavior --> extends CyclicBehavior
+    - trong action() sẽ implement nhiệm vụ nhận
+    - một agent sẽ có một hàng đợi để lưu tất cả các message nó nhận được
+    - agent gọi hàm receive() để lấy message tiếp theo trong hàng đợi
+
+5. chạy chương trình
+    - parameter: -gui sender:kichban07.SenderAgent;receiver:kichban07.ReceiverAgent
