@@ -1,0 +1,30 @@
+Mục đích: thực hiện đăng kí và tìm kiếm services với df agent
+    - JADE có một default DF agent để quản lý các services
+    - agent có thể đăng kí services của mình cho DF agent
+    - agent có thể tìm kiếm các services trong DF agent
+    - tạo 2 agent: agent1 đăng kí services, agent2 tìm services
+    - kết quả: agent2 sẽ tìm thấy AID của agent1 
+    --> từ đó có thể thực hiện gửi message cho agent1
+    - đọc về DFAgentDescription, ServiceDescription, DFService để hiểu rõ hơn
+
+1. tạo agent1   
+    - agent có nhiệm vụ đăng kí services của mình với default df
+    - để đăng kí được với df agent, cần có 1 đối tượng DFAgentDescription dfd
+    - DFAgentDescription có một số fields cần chú ý: 
+        + AID của agent có services
+        + danh sách services, mỗi service là 1 đối tượng ServiceDescription sd
+    - dfd.setName(AID của agent)
+    - sd.setType(tên của loại service) - các agent khác có thể dùng tên này để tìm kiếm service
+    - dfd.addServices(đối tượng ServiceDescription sd) - 1 agent có thể có nhiều services
+    - đối tượng DFService sẽ gọi register(DFAgentDescription dfd) để đăng kí service với default df
+    - trong takeDown(), cần thực hiện hủy đăng kí để tránh gây lỗi trùng AID
+    - DFService có cung cấp deregister() để thực hiện hủy đăng kí
+
+2. tạo agent2
+    - agent2 sẽ tìm kiếm services 
+    - để tìm kiếm được, agent2 cũng cần có 1 đối tượng DFAgentDescription dfd
+    - dfd sẽ không setName() (vì đang tìm kiếm và chưa biết AID có service cần tìm)
+    - ServiceDescription sd sẽ như là một filter lọc gói tin
+    - DFService sẽ gọi search() để tìm các services
+    - kết quả của search() sẽ trả về danh sách các DFAgentDescription
+    - từ danh sách, có thể lấy các AID để thực hiện gửi message 
