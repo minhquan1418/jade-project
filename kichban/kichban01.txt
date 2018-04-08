@@ -18,7 +18,7 @@ Mục đích: tạo được một agent đơn giản
 	- Name: tên của configuration.
 	- Project: tên của project.
 	- Main class: jade.Boot.
-	- Program aguments: -gui agent1:testagent.HelloAgent.
+	- Program aguments: -gui agent1:testagent.HelloAgent
 5. eclipse có hiển thị câu command line mà eclipse dùng để chạy chương trình nên không lo lắng việc chạy bằng command line hay chạy bằng eclipse.
 	- trong view Debug --> chuột phải vào lần cuối cùng chạy chương trình --> chọn Properties.
 	https://drive.google.com/open?id=170gJMwP-HOHMvv75mR_Mo6Cn6Tn9L5u7

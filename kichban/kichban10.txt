@@ -1,0 +1,25 @@
+Mục đích: chạy flatform trên nhiều host khác nhau
+    - host1 sẽ chứa Main Container với dummy agent1
+    - host2 sẽ chứa 1 container khác với dummy agent2
+    - tạo package kichban10
+
+1. tạo class HelloAgent chỉ xuất tên của mình ra console
+
+2. đóng gói project với tất cả các dependencies thành file jar
+    - copy file jar đó vào host1 và host2
+
+3. chạy JADE ở host1
+    - ở host1 sẽ chứa Main Container
+    - command line: java -cp hello-jade.jar jade.Boot -gui agent1:kichban10.HelloAgent
+    - ở RMA GUI, ta sẽ thấy Main Container và agent1
+    https://drive.google.com/open?id=1XXjo9AaGmpQLUm1qZn98-47VWZpNcZqz
+
+4. chạy JADE ở host2
+    - ở host2 sẽ chứa 1 container
+    - command line: java -cp hello-jade.jar jade.Boot -container -host <ip host1> -port 1099 agent2:kichban10.HelloAgent
+    https://drive.google.com/open?id=10Ee7qPJIeRUoiiC3jW-qIhAZgb74QrsS
+    - parameter -container để chỉ rằng đây là một non-main container
+    - vì vậy cần chỉ ra địa chỉ của Main Container để container này có thể kết nối vào
+    - parameter -host và -port là để cho nhiệm vụ này
+    - quay trở lại RMA ở host1 để xem kết quả --> xuất hiện thêm 1 container và 1 agent
+    https://drive.google.com/open?id=1XpuJX8p9zFJ4aatXV0Xd6ptA8GgWD8Cr
